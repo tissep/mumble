@@ -7,4 +7,8 @@ RUN         apt-get -y install mumble-server
 EXPOSE      64738
 ADD         ./mumble/mumble-server.ini /etc/mumble-server.ini
 ADD         ./init/murmur.init /etc/init/murmur.init
-RUN         service mumble-server start       
+add    ./scripts/start /start
+run   chmod +x /start
+expose 64738
+volume ["/data"]
+cmd ["/start"]
