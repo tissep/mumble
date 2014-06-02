@@ -2,7 +2,7 @@
 FROM        ubuntu:12.04
 ENV         DEBIAN_FRONTEND noninteractive
 RUN         apt-get update
-RUN         apt-get -y install mumble-server
+RUN         apt-get -y install mumble-server pwgen
 # Port for mumble
 EXPOSE      64738
 ADD         ./mumble/mumble-server.ini /etc/mumble-server.ini
